@@ -1,7 +1,6 @@
-repeat task.wait() until game:IsLoaded() task.wait(1)
+repeat task.wait() until game:IsLoaded() task.wait()
 
-local BoogaBoogaIDs = {11729688377, 11879754496}
-if table.find(BoogaBoogaIDs, game.PlaceId) then
+if game.PlaceId == 11729688377 or game.PlaceId == 11879754496 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2160f00537bac611bb821512dfb6b28d.lua"))()
 elseif game.PlaceId == 85896571713843 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/738b429bcb68b5addcf258dc48f4f6f3.lua"))()
