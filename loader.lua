@@ -1,28 +1,11 @@
 repeat task.wait() until game:IsLoaded() task.wait()
 
-local allowedExecutors = {
-    ["AWP"] = true,
-    ["Swift"] = true,
-    ["Zenith"] = true,
-    ["Velocity"] = true,
-    ["Wave"] = true,
-    ["Ronix"] = true,
-    ["Sirhunt"] = true,
-    ["Nihon"] = true,
-    ["Solora"] = false,
-    ["Xeno"] = false
-}
-
-local function detectExecutor()
-    if identifyexecutor then
-        return identifyexecutor()
-    else
-        return "Unknown Executor"
-    end
+local function isLevel8()
+    return (syn and syn.secure_call) or (getexecutorname and getexecutorname()) or (identifyexecutor and identifyexecutor()) or (secure_call ~= nil)
 end
 
-if not allowedExecutors[detectExecutor()] then
-    return game.Players.LocalPlayer:Kick("Unsupported executor: " .. executor)
+if not isLevel8() then
+    game.Players.LocalPlayer:Kick("Unsupported executor: Level 8 executor required")
 end
 
 if game.PlaceId == 11729688377 or game.PlaceId == 11879754496 then
