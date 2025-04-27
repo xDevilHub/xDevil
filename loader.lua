@@ -1,6 +1,7 @@
 repeat task.wait() until game:IsLoaded() task.wait()
 
 local allowedExecutors = {
+    ["AWP"] = true,
     ["Swift"] = true,
     ["Zenith"] = true,
     ["Velocity"] = true,
